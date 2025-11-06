@@ -6,6 +6,7 @@ from .models import ExtractedData
 from .serializers import ExtractedDataSerializer
 from utils.utils import process_pdf_with_agent
 
+
 class PDFBatchUploadView(APIView):
     def post(self, request, *args, **kwargs):
         pdf_files = request.FILES.getlist("files")

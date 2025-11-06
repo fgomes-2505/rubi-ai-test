@@ -6,9 +6,9 @@ from utils.utils import suggest_companies_with_agent
 
 class CompanySuggestionView(APIView):
     def post(self, request, *args, **kwargs):
-        user_data = request.data
+        user_data = request.FILES.get("file")
         if not user_data:
-            return Response({"error": "No input data provided"}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"error": "No files uploaded"}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             suggestions = suggest_companies_with_agent(user_data)

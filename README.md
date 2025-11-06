@@ -4,18 +4,28 @@ AI-powered PDF ingestion – extract structured financial data from company PDFs
 
 Investment matching – suggest similar companies based on a user’s deal criteria using weighted similarity logic.
 
-Follow these steps:
-install python 3.12
+Follow these steps for running the application without using docker:
+
+install python 3.13
 git clone https://github.com/yourusername/rubi-ai.git
 cd rubi-ai
 python -m venv .venv
-source .venv/bin/activate
+source .venv/bin/activate (linux)
+.venv/Scripts/activate (windows)
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 import the postman collection
 create a .env file in the root directory and add a variable called "OPENAI_API_KEY" in the .env (follow the .env.example file)
+
+Follow these steps for running the application using docker:
+
+install docker and docker-compose
+git clone https://github.com/yourusername/rubi-ai.git
+import the postman collection
+create a .env file in the root directory and add a variable called "OPENAI_API_KEY" in the .env (follow the .env.example file)
+run docker-compose up --build
 
 There are two endpoints, which are:
 1. http://127.0.0.1:8000/api/v1/upload-pdf/ --> upload multiple pdf's and feed the table ingestion_extracteddata

@@ -61,12 +61,14 @@ def process_pdf_with_agent(pdf_file) -> dict:
         raise ValueError("Failed to parse JSON from model response")
 
 
-def suggest_companies_with_agent(user_data):
+def suggest_companies_with_agent(pdf_file) -> dict:
+    pdf_bytes = pdf_file.read()
+    text = extract_pdf_text(pdf_bytes)
     companies = list(ExtractedData.objects.all().values())
 
     model = ChatOpenAI(model="gpt-5-mini")
 
-    system_prompt = """
+    system_prompt = f"""
         You are an investment analysis assistant.
 
         Given a user's investment criteria and a list of companies (with fields:
@@ -91,15 +93,17 @@ def suggest_companies_with_agent(user_data):
 
         Respond ONLY in valid JSON with this format:
         [
-        {"company": "Company Name", "score": 0.87, "reason": "Short explanation"},
+        {{"company": "Company Name", "score": 0.87, "reason": "Short explanation"}},
         ...
         ]
+    
+        Companies List: {json.dumps(companies)}
     """
 
 
     messages = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": f"User requirements: {json.dumps(user_data)}\n\nCompanies: {json.dumps(companies)}"}
+        {"role": "user", "content": f"User requirements: {text}"},
     ]
 
     response = model.invoke(messages)

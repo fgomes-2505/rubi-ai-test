@@ -25,10 +25,7 @@
 								"/C:/Users/felip/Downloads/cim-examples/project-ilume-cim-vf-7_20250804_185008_997532b5.pdf.pdf",
 								"/C:/Users/felip/Downloads/cim-examples/8--project-greenteam---cim---20250923_155517_8b6151f9 (1).pdf.pdf",
 								"/C:/Users/felip/Downloads/cim-examples/agile-services-group_cim_7-29-25-ab_20251027_222757_2d7f019d.pdf.pdf",
-								"/C:/Users/felip/Downloads/cim-examples/giantcontracting.cim.pdf",
-								"/C:/Users/felip/Downloads/cim-examples/midland_cim_20251007_161908_3d0a1e99.pdf.pdf",
-								"/C:/Users/felip/Downloads/cim-examples/techno0d194296 (1).pdf.pdf",
-								"/C:/Users/felip/Downloads/cim-examples/x--innovis-cim--september-2025.pdf"
+								"/C:/Users/felip/Downloads/cim-examples/giantcontracting.cim.pdf"
 							]
 						}
 					]
@@ -59,13 +56,14 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"industry\": \"Renewable Energy\",\r\n  \"revenue_min\": 1000000,\r\n  \"market_size\": 500\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/felip/Downloads/cim-examples/x--innovis-cim--september-2025.pdf"
 						}
-					}
+					]
 				},
 				"url": {
 					"raw": "http://127.0.0.1:8000/api/v1/suggest-company/",
