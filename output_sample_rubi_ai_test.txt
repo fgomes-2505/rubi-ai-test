@@ -1,0 +1,27 @@
+[
+    {
+        "company": "AIHardTech",
+        "score": 0.645,
+        "reason": "Direct industry fit (Software & Services) and an almost exact revenue match ($10M target vs $10M actual) with EBITDA reasonably close (3.4M vs 2.5M target); low customer concentration also reduces client-risk."
+    },
+    {
+        "company": "JR Tri-State Giant Contracting Group, Inc.",
+        "score": 0.337,
+        "reason": "Reasonable numeric fit on revenue and EBITDA (34.6M revenue, 4.93M EBITDA) and moderate customer concentration (34.6%) — good financial proximity to the target metrics."
+    },
+    {
+        "company": "E.H. Transportation, Inc.",
+        "score": 0.267,
+        "reason": "Moderate revenue/EBITDA similarity (45.45M revenue, 8.28M EBITDA) and customer concentration near the 50% target (56.65%), providing a fair match on the key financial criteria."
+    },
+    {
+        "company": "Agile Service Group, Inc.",
+        "score": 0.185,
+        "reason": "Strong market-size alignment (914.4 vs 1000 target) and service-oriented business model; revenue/EBITDA are smaller scale in the data provided, but market opportunity and service fit support selection."
+    },
+    {
+        "company": "5Power",
+        "score": 0.127,
+        "reason": "High absolute revenue and EBITDA (165M / 22.6M) yield a weaker numeric similarity to the mid-market target, but customer concentration (35%) and strong profitability contribute to a modest overall match."
+    }
+]
